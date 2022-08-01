@@ -24,7 +24,9 @@ app.use(router, cors(), express.json(),
         extended: true
     })
 );
-app.listen(port);
+app.listen(port, ()=> {
+    console.log(`Server is running on port ${port}`);
+});
 router.get('^/$|/courses', (req, res)=> {
     res.send(courses);
 });
